@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mantenimiento Correctivo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Mantenimiento Correctivo</h1>
+  </header>
+  <main>
+    <section id="trabajos-diarios">
+      <h2>Trabajos diarios</h2>
+      <ul>
+        <li>
+          <p>Fecha: 2023-11-14</p>
+          <p>Descripción: Reparación de una fuga en la tubería del baño</p>
+          <p>Estado: Completada</p>
+          <img src="imagen1.jpg" alt="Foto de la reparación de la fuga">
+        </li>
+        <li>
+          <p>Fecha: 2023-11-15</p>
+          <p>Descripción: Cambio de bombilla en la escalera</p>
+          <p>Estado: Pendiente</p>
+        </li>
+      </ul>
+    </section>
+    <section id="nuevo-trabajo">
+      <h2>Nuevo trabajo</h2>
+      <form action="#">
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha">
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion"></textarea>
+        <label for="estado">Estado:</label>
+        <select id="estado" name="estado">
+          <option value="pendiente">Pendiente</option>
+          <option value="en_curso">En curso</option>
+          <option value="completada">Completada</option>
+        </select>
+        <input type="submit" value="Guardar">
+      </form>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,48 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mantenimiento Correctivo</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMMS</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Mantenimiento Correctivo</h1>
-  </header>
-  <main>
-    <section id="trabajos-diarios">
-      <h2>Trabajos diarios</h2>
-      <ul>
-        <li>
-          <p>Fecha: 2023-11-14</p>
-          <p>Descripción: Reparación de una fuga en la tubería del baño</p>
-          <p>Estado: Completada</p>
-          <img src="imagen1.jpg" alt="Foto de la reparación de la fuga">
-        </li>
-        <li>
-          <p>Fecha: 2023-11-15</p>
-          <p>Descripción: Cambio de bombilla en la escalera</p>
-          <p>Estado: Pendiente</p>
-        </li>
-      </ul>
-    </section>
-    <section id="nuevo-trabajo">
-      <h2>Nuevo trabajo</h2>
-      <form action="#">
-        <label for="fecha">Fecha:</label>
-        <input type="date" id="fecha" name="fecha">
-        <label for="descripcion">Descripción:</label>
-        <textarea id="descripcion" name="descripcion"></textarea>
-        <label for="estado">Estado:</label>
-        <select id="estado" name="estado">
-          <option value="pendiente">Pendiente</option>
-          <option value="en_curso">En curso</option>
-          <option value="completada">Completada</option>
-        </select>
-        <input type="submit" value="Guardar">
-      </form>
-    </section>
-  </main>
-</body>
-</html>
+    <header>
+        <h1>CMMS</h1>
+    </header>
+    <main>
+        <section id="activos">
+            <h2>Activos</h2>
+            <ul id="lista-activos"></ul>
+            <button onclick="mostrarFormularioAgregarActivo()">Agregar activo</button>
+            <div id="formulario-agregar-activo" class="hidden">
+                <form onsubmit="agregarActivo(event)">
+                    <label for="nombre-activo">Nombre:</label>
+                    <input type="text" id="nombre-activo">
+                    <label for="descripcion-activo">Descripción:</label>
+                    <textarea id="descripcion-activo"></textarea>
+                    <label for="tipo-activo">Tipo:</label>
+                    <select id="tipo-activo">
+                        <option value="Equipo">Equipo</option>
+                        <option value="Herramienta">Herramienta</option>
+                        <option value="Material">Material</option>
+                    </select>
+                    <label for="ubicacion-activo">Ubicación:</label>
+                    <input type="text" id="ubicacion-activo">
+                    <button type="submit">Agregar</button>
+                </form>
+            </div>
+        </section>
+        <section id="ordenes-de-trabajo">
+            <h2>Órdenes de trabajo</h2>
+            <ul id="lista-ordenes-de-trabajo"></ul>
+            <button onclick="mostrarFormularioAgregarOrdenDeTrabajo()">Agregar orden de trabajo</button>
+            <div id="formulario-agregar-orden-de-trabajo" class="hidden">
+                <form onsubmit="agregarOrdenDeTrabajo(event)">
+                    <label for="activo-orden-de-trabajo">Activo:</label>
+                    <select id="activo-orden-de-trabajo"></select>
+                    <label for="descripcion-orden-de-trabajo">Descripción:</label>
+                    <textarea id="descripcion-orden-de-trabajo"></textarea>
+                    <label for="prioridad-orden-de-trabajo">Prioridad:</label>
+                    <select id="prioridad-orden-de-trabajo">
+                        <option value="Baja">Baja</option>
+                        <option value="Media">Media</option>
+                        <option value="Alta">Alta</option>
+                    </select>
+                    <label for="tipo-orden-de-trabajo">Tipo:</label>
+                    <select id="tipo-orden-de-trabajo">
+                        <option value="Preventivo">Preventivo</option>
+                        <option value="Correctivo">Correctivo</option>
+                    </select>
+                    <label for="fecha-creacion-orden-de-trabajo">Fecha de creación:</label>
+                    <input type="date" id="fecha-creacion-orden-de-trabajo">
+                    <label for="fecha-completada-orden-de-trabajo">Fecha de completada:</label>
+                    <input type="date" id="fecha-completada-orden-de-trabajo">
+                    <label for="tecnico-orden-de-trabajo">Técnico:</label>
+                    <input type="text" id="tecnico-orden-de-trabajo">
+                    <button type="submit">Agregar</button>
+                </form>
+            </div>
+        </section>
+        <section id="historial-mantenimiento">
+            <h2>Historial de mantenimiento</h2>
+            <ul id="lista-historial-mantenimiento"></ul>
+            <button onclick="mostrarFormularioAgregarHistorialMantenimiento()">Agregar historial de mantenimiento</button>
+            <div id="formulario-agregar-historial-mantenimiento" class="hidden">
+                <form onsubmit="agregarHistorialMantenimiento(event)">
+                    <label for="fecha-historial-mantenimiento">Fecha:</label>
+                    <input type="date" id="fecha-historial-mantenimiento">
+                    <label for="descripcion-historial-mantenimiento">Descripción:</label>
+                    <textarea id="descripcion-historial-mantenimiento"></textarea>
+                    <label for="archivo-historial-mantenimiento">Archivo:</label>
+                    <input type="file" id="archivo-historial-mantenimiento
